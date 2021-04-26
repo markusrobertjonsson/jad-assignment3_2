@@ -1,0 +1,27 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+
+  pre_build:
+    commands:
+      - echo Entered prebuild phase on `date`
+      - python3.9 -m venv test_venv
+      - . test_venv/bin/activate
+      - pip install --upgrade pip
+      - pip install -r requirements.txt
+      - pip install pytest
+
+  build:
+    commands:
+      - echo Build started on `date`
+      - python3.9 -m unittest -v tests/test_models.py
+      
+  post_build:
+    commands:
+      - echo Build completed on `date`
