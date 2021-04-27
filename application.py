@@ -8,18 +8,18 @@ from math import sqrt
 application = Flask(__name__)
 CORS(application)
 
-# # Get environment variables on server
-# USERNAME = environ.get('RDS_USERNAME')
-# PASSWORD = environ.get('RDS_PASSWORD')
-# HOSTNAME = environ.get('RDS_HOSTNAME')
-# PORT = environ.get('RDS_PORT')
-# DBNAME = environ.get('RDS_DB_NAME')
+# Get environment variables on server
+USERNAME = environ.get('RDS_USERNAME')
+PASSWORD = environ.get('RDS_PASSWORD')
+HOSTNAME = environ.get('RDS_HOSTNAME')
+PORT = environ.get('RDS_PORT')
+DBNAME = environ.get('RDS_DB_NAME')
 
 # Syntax: dialect+driver://username:password@host:port/database
-# application.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{USERNAME}:{PASSWORD}@{HOSTNAME}:{PORT}/{DBNAME}'
+application.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{USERNAME}:{PASSWORD}@{HOSTNAME}:{PORT}/{DBNAME}'
 
 # In tests. Creates a file xydata_test.db in same dir as this file.
-application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///xydata_sqlite.db'
+# application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///xydata_sqlite.db'
 
 # To avoid warning. We do not use the Flask-SQLAlchemy event system, anyway.
 application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
