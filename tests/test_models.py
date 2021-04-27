@@ -3,7 +3,7 @@ This file (test_models.py) contains the unit tests for the model XYData3.
 """
 import unittest
 
-from app import XYData3
+from application import XYData3
 
 
 class TestBasic(unittest.TestCase):
