@@ -16,7 +16,7 @@ PORT = environ.get('RDS_PORT')
 DBNAME = environ.get('RDS_DB_NAME')
 
 # Syntax: dialect+driver://username:password@host:port/database
-application.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{USERNAME}:{PASSWORD}@{HOSTNAME}:{PORT}/{DBNAME}'
+app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{USERNAME}:{PASSWORD}@{HOSTNAME}:{PORT}/{DBNAME}'
 
 # In tests. Creates a file xydata_test.db in same dir as this file.
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///xydata_sqlite.db'
