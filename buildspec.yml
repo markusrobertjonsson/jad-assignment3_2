@@ -6,12 +6,12 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      python: 3.9
+      python: 3.8
 
   pre_build:
     commands:
       - echo Entered prebuild phase on `date`
-      - python3.9 -m venv test_venv
+      - python3.8 -m venv test_venv
       - . test_venv/bin/activate
       - pip install --upgrade pip
       - pip install -r requirements.txt
@@ -20,7 +20,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - python3.9 -m unittest -v tests/test_models.py
+      - python3.8 -m unittest -v tests/test_models.py
       - zip -r app.zip ./ -x *test_venv*
       
   post_build:
