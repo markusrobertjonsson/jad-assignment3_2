@@ -17,7 +17,7 @@ class TestBasic(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_create_new():
+    def test_create_new(self):
         """
         GIVEN a XYData3 database model
         WHEN a new XYData3 is created
