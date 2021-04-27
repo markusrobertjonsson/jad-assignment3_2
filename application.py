@@ -122,11 +122,11 @@ def delete(id):
 
 
 # Not needed if we start with "flask run" (or "python -m flask run")
-# if __name__ == '__main__':
-#     application.debug = True
+if __name__ == '__main__':
+    # application.debug = True
 
-#     # Start Flask app
-#     application.run()
+    # Start Flask app
+    application.run()
 
 
 # def create_app(test_config=None):
