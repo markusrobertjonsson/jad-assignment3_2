@@ -8,7 +8,7 @@ from math import sqrt
 application = Flask(__name__)
 CORS(application)
 
-# Get environment variables on server
+# # Get environment variables on server
 # USERNAME = environ.get('RDS_USERNAME')
 # PASSWORD = environ.get('RDS_PASSWORD')
 # HOSTNAME = environ.get('RDS_HOSTNAME')
