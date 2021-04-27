@@ -21,7 +21,14 @@ phases:
     commands:
       - echo Build started on `date`
       - python3.9 -m unittest -v tests/test_models.py
+      - zip -r app.zip ./ -x *test_venv*
       
   post_build:
     commands:
       - echo Build completed on `date`
+
+artifacts:
+  files:
+    - app.zip
+  discard-paths: no
+  
